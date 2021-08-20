@@ -5,14 +5,13 @@ public class BeanCategory {
     private String name;
     private int status;
 
-    public BeanCategory(){
-
-    }
-
     public BeanCategory(int idCategory, String name, int status) {
         this.idCategory = idCategory;
         this.name = name;
         this.status = status;
+    }
+
+    public BeanCategory() {
     }
 
     public int getIdCategory() {

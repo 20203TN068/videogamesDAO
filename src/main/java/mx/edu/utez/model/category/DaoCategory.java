@@ -1,7 +1,7 @@
 package mx.edu.utez.model.category;
 
-import mx.edu.utez.model.games.BeanGames;
-import mx.edu.utez.model.games.DaoGames;
+import mx.edu.utez.model.game.BeanGames;
+import mx.edu.utez.model.game.DaoGames;
 import mx.edu.utez.service.ConnectionMySQL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

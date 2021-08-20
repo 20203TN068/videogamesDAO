@@ -1,4 +1,4 @@
-package mx.edu.utez.model.games;
+package mx.edu.utez.model.game;
 
 import mx.edu.utez.model.category.BeanCategory;
 import mx.edu.utez.service.ConnectionMySQL;

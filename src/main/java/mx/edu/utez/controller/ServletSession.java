@@ -9,23 +9,16 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ServletSession", urlPatterns = {"/login","/logout"})
+@WebServlet(name = "ServletSession", value = "/ServletSession")
 public class ServletSession extends HttpServlet {
-    /**
-     * Cierre de la sesión de la aplicación
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //Obteniendo la sesión
+        // Obteniendo la sesión
         HttpSession session = request.getSession();
         //Matando la sesión
         session.setAttribute("session", null);
         session.invalidate();
-        //Redirigiendo a "/"
+        //Redirigiendo
         request.getRequestDispatcher("/").forward(request,response);
     }
 
@@ -33,8 +26,8 @@ public class ServletSession extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        DaoUser daoUser = new DaoUser();
-        boolean res = daoUser.createSession(request.getParameter("email"), request.getParameter("password"));
+        DaoUser daouser = new DaoUser();
+        boolean res = daouser.createSession(request.getParameter("email"), request.getParameter("password"));
         BeanUser beanUser = new BeanUser();
         beanUser.setEmail(request.getParameter("email"));
         beanUser.setPassword(request.getParameter("password"));

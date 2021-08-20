@@ -9,9 +9,10 @@ public class ConnectionMySQL {
         String database = "videogames";
         String useSSL = "false";
         String timezone = "UTC";
+
         String url = String.format("jdbc:mysql://%s:%s/%s?useSSL=%s&serverTimezone=%s", host, port, database, useSSL, timezone);
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-        return DriverManager.getConnection(url, "root", "");
+        return DriverManager.getConnection(url, "root", "root");
     }
 
     public static void closeConnections(Connection con, CallableStatement cstm, ResultSet rs){
